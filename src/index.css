@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for VyapaarPost */
+:root {
+  --primary: #f97316;
+  --secondary: #3b82f6;
+  --accent: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #fafafa;
+}
+
+/* Mobile-first touch targets */
+button, 
+input, 
+select, 
+textarea {
+  min-height: 44px;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+/* Hindi/Devanagari text */
+.font-hindi {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+/* Tamil text */
+.font-tamil {
+  font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+/* Smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Canvas element styling */
+.canvas-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+}
+
+/* Text overlay positioning */
+.text-overlay {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 0 16px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Loading spinner */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bottom sheet animation */
+.bottom-sheet {
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+.bottom-sheet.hidden {
+  transform: translateY(100%);
+}
+
+/* Safe area padding for mobile */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
