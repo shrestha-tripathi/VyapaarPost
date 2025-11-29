@@ -17,8 +17,8 @@ export default defineConfig({
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/VyapaarPost/',
-        start_url: '/VyapaarPost/',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -75,5 +75,6 @@ export default defineConfig({
       }
     })
   ],
-  base: '/VyapaarPost/',
+  base: '',
 })
+
